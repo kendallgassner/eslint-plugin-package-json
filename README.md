@@ -1,3 +1,5 @@
+This repo is forked off of [eslint-plugin-package-json](https://github.com/zetlen/eslint-plugin-package-json) and is temporarily being used while https://github.com/zetlen/eslint-plugin-package-json/pull/11 is in the review process.
+
 # eslint-plugin-package-json
 
 Rules for valid, consistent, and readable package.json files
@@ -55,17 +57,19 @@ Or, individually configure the rules you want to use under the rules section.
 -   [`package-json/valid-package-def`](docs/rules/valid-package-def): Validates the casing for `file:` and `link:` dependencies in the `package.json` files. If the casing of these paths are incorrect yarn does not sub out the link when releasing. An example:
 
     This:
+
     ```
     "devDependencies": {
             "some-package": "link:../folder",
     }
     ```
+
     Should be:
+
     ```
     "devDependencies": {
             "some-package": "link:../Folder",
     }
     ```
-
 
 These rules only run on `package.json` files; they will ignore all other files being linted. They lint `package.json` files at project root, and in any subfolder of the project, making this plugin great for monorepos.
