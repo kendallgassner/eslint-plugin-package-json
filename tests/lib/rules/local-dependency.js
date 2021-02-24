@@ -47,22 +47,6 @@ ruleTester.run('local-dependency', rule, {
                     "keywords": [],
                     "author": "me!",
                     "license": "ISC",
-                    "peerDependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/local-dependency",
-                        "some-other-package": "some-other-package"
-                    }
-                }`,
-            filename: fileName('package.json')
-        },
-        {
-            code: `module.exports = {
-                    "name": "pandages",
-                    "version": "1.0.0",
-                    "description": "",
-                    "main": "index.js",
-                    "keywords": [],
-                    "author": "me!",
-                    "license": "ISC",
                     "devDependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/local-dependency",
                         "some-other-package": "some-other-package"
@@ -187,7 +171,7 @@ ruleTester.run('local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Local-dependency.'
+                        'Peer Dependencies cannot be listed as local dependencies.'
                 }
             ]
         },
@@ -261,7 +245,7 @@ ruleTester.run('local-dependency', rule, {
                 },
                 {
                     message:
-                        'The package peer-package does not exist given the specified path: link:./tests/lib/__fixtures__/Local-dependency.'
+                        'Peer Dependencies cannot be listed as local dependencies.'
                 }
             ]
         },
