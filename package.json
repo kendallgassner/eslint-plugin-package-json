@@ -1,6 +1,6 @@
 {
   "name": "@kendallgassner/eslint-plugin-package-json",
-  "version": "0.1.5",
+  "version": "0.2.1",
   "description": "Rules for valid, consistent, and readable package.json files",
   "keywords": [
     "eslint",
